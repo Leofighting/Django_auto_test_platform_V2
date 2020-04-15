@@ -1,0 +1,17 @@
+body{
+    text-align:center
+}
+
+button {
+    width: 200px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+footer {
+    margin-top: 300px;
+}
+
+.header {
+    margin-top: 100px;
+}

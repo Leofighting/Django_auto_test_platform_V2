@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>AutotestPlat</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+<div class="header">
+
+    <h1>自动化平台测试开发</h1>
+
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <br><a>&nbsp;&nbsp;用户名：</a> <input name="username" type="text" placeholder="请输入用户名">
+        <br><br> <a>&nbsp;&nbsp;密 &nbsp;&nbsp; 码：</a> <input name="password" type="password" placeholder="请输入密码">
+        <br>{{ error }}<br>
+        &nbsp;
+        <button id="submit" type="submit">登 录</button>
+    </form>
+</div>
+<footer class="main-footer">
+    <div class="pull-right hidden-xs">
+        <b>Version</b> 1.0
+    </div>
+    <strong>Copyright &copy; 2020 .</strong> 自动化测试管理平台
+</footer>
+</body>
+</html>
