@@ -20,6 +20,7 @@ class Bug(models.Model):
     class Meta:
         verbose_name = "bug 管理"
         verbose_name_plural = verbose_name
+        ordering = ["id"]
 
     def __str__(self):
         return self.bug_name

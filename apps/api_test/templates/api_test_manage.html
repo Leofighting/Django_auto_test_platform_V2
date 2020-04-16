@@ -6,6 +6,7 @@
     <title>自动化测试平台</title>
 
     <link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"/>
     <script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
     <script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
     <script type="text/javascript" src="/static/admin/js/core.js"></script>
@@ -39,8 +40,10 @@
         </ul>
     </div>
 </nav>
+
+<div class="main">
 <!-- 搜索栏-->
-<div class="page-header" style="padding-top: 70px;">
+<div class="page-header">
     <form class="navbar-form" method="get" action="/apisearch/">
         {% csrf_token %}
         <input type="search" name="apitestname" placeholder="名称" required>
@@ -49,7 +52,7 @@
 </div>
 
 <!-- 增加 api 流程测试用例-->
-<div style="float:right;width:73%">
+<div class="add">
     <select name="Apitest" id="id_Apitest">
         <option value="" selected>----api 流程测试用例----</option>
     </select>
@@ -64,7 +67,7 @@
 </div>
 
 <!-- 流程接口列表-->
-<div class="row" style="padding-top: 70px;">
+<div class="row">
     <div class="col-md-12">
         <table class="table table-striped">
             <thead>
@@ -149,5 +152,6 @@
     </ul>
 </div>
 </span>
+</div>
 </body>
 </html>

@@ -5,7 +5,7 @@
     {% bootstrap_javascript %}
     <title>产品自动化测试平台</title>
     <link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css"/>
-    <script type="text/javascript" src="/admin/jsi18n/"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"/>
     <script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
     <script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
     <script type="text/javascript" src="/static/admin/js/core.js"></script>
@@ -38,8 +38,9 @@
     </div>
 </nav>
 
+<div class="main">
 <!-- 搜索栏-->
-<div class="page-header" style="padding-top: 70px;">
+<div class="page-header" >
     <form class="navbar-form" method="get" action="/apissearch/">
         {% csrf_token %}
         <input type="search" name="apiname" placeholder="名称" required>
@@ -48,7 +49,7 @@
 </div>
 
 <!-- 增加 api 单一接口测试用例-->
-<div style="float:right;width:73%">
+<div class="add" >
     <select name="Apis" id="id_Apis">
         <option value="" selected>----api 单一接口测试用例----</option>
     </select>
@@ -62,7 +63,7 @@
     </a>
 </div>
 <!--单一接口测试用例-->
-<div class="row" style="padding-top: 70px;">
+<div class="row" >
     <div class="col-md-11">
         <table class="table table-striped">
             <thead>
@@ -145,5 +146,6 @@
  </ul>
 </div>
 </span>
+</div>
 </body>
 </html>

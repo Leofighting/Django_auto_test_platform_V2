@@ -5,6 +5,8 @@
     {% bootstrap_javascript %}
     <title>产品自动化测试平台</title>
     <link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"/>
+
     <script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
     <script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
     <script type="text/javascript" src="/static/admin/js/core.js"></script>
@@ -32,8 +34,9 @@
     </div>
 </nav>
 
+<div class="main">
 <!-- 搜索栏-->
-<div class="page-header" style="padding-top: 70px;">
+<div class="page-header">
     <form class="navbar-form" method="get" action="/bugsearch/">
         {% csrf_token %}
         <input type="search" name="bugname" placeholder="名称" required>
@@ -42,7 +45,7 @@
 </div>
 
 <!-- 增加 bug-->
-<div style="float:right;width:73%">
+<div class="add">
     <select name="Bug" id="id_Bug">
         <option value="" selected>----bug 名称----</option>
     </select>
@@ -58,8 +61,8 @@
 </div>
 
 <!--bug 列表-->
-<div class="row" style="padding-top: 70px;">
-    <div class="col-md-12">
+<div class="row">
+    <div class="col-md-100">
         <table class="table table-striped" style="table-layout: fixed;">
             <style>
                 td {
@@ -96,12 +99,12 @@
                 <td>{{ bug.bug_assign }}</td>
                 <td>{{ bug.created_time }}</td>
                 <td><a style='color:lightblue' class="related-widget-wrapper-link add-related" id="add_id_Bug"
-                       href="../admin/bug/bug/{{ bug.id }}/change/?_to_field=id&_popup=1"><img
-                        src="/static/admin/img/iconchangelink.svg"/></a>
+                       href="/admin/bug/bug/{{ bug.id }}/change/?_to_field=id&_popup=1"><img
+                        src="/static/admin/img/icon-changelink.svg"/></a>
                 </td>
                 <td><a style='color:lightblue' class="related-widget-wrapper-link add-related" id="add_id_Bug"
-                       href="../admin/bug/bug/{{ bug.id }}/delete/?_to_field=id&_popup=1"><img
-                        src="/static/admin/img/icondeletelink.svg"/></a>
+                       href="/admin/bug/bug/{{ bug.id }}/delete/?_to_field=id&_popup=1"><img
+                        src="/static/admin/img/icon-deletelink.svg"/></a>
                 </td>
             {% endfor %}
             </tbody>
@@ -142,5 +145,6 @@
  </ul>
 </div>
 </span>
+</div>
 </body>
 </html>

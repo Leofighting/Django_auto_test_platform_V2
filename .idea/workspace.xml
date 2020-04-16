@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86f90a3e-c5b0-4cef-aced-978bb9135b36" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/apps/bug/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/bug/migrations/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api_test/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api_test/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api_test/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api_test/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/product/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/product/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/product/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/product/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auto_test/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_test/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auto_test/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_test/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api_test/templates/api_step_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api_test/templates/api_step_manage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api_test/templates/api_test_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api_test/templates/api_test_manage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api_test/templates/apis_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api_test/templates/apis_manage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api_test/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api_test/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/bug/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/bug/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/bug/templates/bug_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/bug/templates/bug_manage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/product/templates/product_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/product/templates/product_manage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/login.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -44,6 +45,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/apps/bug/templates" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -94,7 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1586929429653</updated>
       <workItem from="1586929431377" duration="4388000" />
-      <workItem from="1586997392018" duration="8403000" />
+      <workItem from="1586997392018" duration="13036000" />
     </task>
     <servers />
   </component>
@@ -106,21 +108,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="790" y="159" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587001578543" />
-    <state width="1877" height="259" key="GridCell.Tab.0.bottom" timestamp="1587004143120">
+    <state width="1877" height="238" key="GridCell.Tab.0.bottom" timestamp="1587016534860">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="259" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587004143120" />
-    <state width="1877" height="259" key="GridCell.Tab.0.center" timestamp="1587004143120">
+    <state width="1877" height="238" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587016534860" />
+    <state width="1877" height="238" key="GridCell.Tab.0.center" timestamp="1587016534859">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="259" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587004143120" />
-    <state width="1877" height="259" key="GridCell.Tab.0.left" timestamp="1587004143120">
+    <state width="1877" height="238" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587016534859" />
+    <state width="1877" height="238" key="GridCell.Tab.0.left" timestamp="1587016534859">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="259" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587004143120" />
-    <state width="1877" height="259" key="GridCell.Tab.0.right" timestamp="1587004143120">
+    <state width="1877" height="238" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587016534859" />
+    <state width="1877" height="238" key="GridCell.Tab.0.right" timestamp="1587016534860">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="259" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587004143120" />
+    <state width="1877" height="238" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587016534860" />
   </component>
 </project>

@@ -5,6 +5,7 @@
     {% bootstrap_javascript %}
     <title>产品自动化测试平台</title>
     <link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"/>
     <script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
     <script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
     <script type="text/javascript" src="/static/admin/js/core.js"></script>
@@ -32,6 +33,7 @@
     </div>
 </nav>
 
+<div class="main">
 <!-- 搜索栏-->
 <div class="page-header" style="padding-top: 70px;">
     <form class="navbar-form" method="get" action="/product_search/">
@@ -42,7 +44,7 @@
 </div>
 
 <!-- 增加产品-->
-<div style="float:right;width:73%">
+<div class="add">
     <select name="Product" id="id_Product">
         <option value="" selected>----产品----</option>
     </select>
@@ -61,9 +63,9 @@
     <div class="col-md-12">
         <table class="table table-striped">
             <thead>
-            <tr>
+            {% comment %}<tr>
                 <td>&nbsp;</td>
-            </tr>
+            </tr>{% endcomment %}
             <tr>
                 <th>ID</th>
                 <th>产品名称</th>
@@ -135,5 +137,6 @@
  </ul>
 </div>
 </span>
+</div>
 </body>
 </html>

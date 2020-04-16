@@ -5,6 +5,7 @@
     {% bootstrap_javascript %}
     <title>自动化测试平台</title>
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"/>
     <link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css"/>
     <script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
     <script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
@@ -42,6 +43,8 @@
         </ul>
     </div>
 </nav>
+
+<div class="main">
 <!-- 流程接口测试步骤-->
 <div class="row" style="padding-top: 70px;">
     <div class="col-md-11">
@@ -85,6 +88,7 @@
 </div>
 
 <!-- 返回、编辑功能-->
+<div class="back_edit">
 <td>
 <a style='color:lightblue'  href="{% url 'api_test_manage' %}" >
 <img src="/static/admin/img/icon-yes.svg" alt="返回"/>返回
@@ -95,6 +99,7 @@
 <a style='color:lightblue' class="related-widget-wrapper-link add-related" id="add_id_Apitest" href="/admin/api_test/apitest/{{ api_test.id  }}/change/?_to_field=id&_popup=1">
 <img src="/static/admin/img/icon-changelink.svg"/>编辑</a>
 </td>
+</div>
 
 <!-- 翻页功能-->
 <span style="position:absolute; right:100px; bottom:30px;"> {# 把翻页功能固定显示在右下角#}
@@ -131,5 +136,6 @@
  </ul>
 </div>
 </span>
+</div>
 </body>
 </html>
