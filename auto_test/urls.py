@@ -29,4 +29,6 @@ urlpatterns = [
     path("api_test/", include("apps.api_test.urls")),
     # bug 管理
     path("bug/", include("apps.bug.urls")),
+    # 设置管理
+    path("set/", include("apps.set.urls")),
 ]

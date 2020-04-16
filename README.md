@@ -26,7 +26,9 @@
 >
 > ![image-20200416110612892](E:\测试\auto_test\static\git_images\05.png)
 
-
+> - 系统设置
+>
+> ![image-20200416140405000](E:\测试\auto_test\static\git_images\06.png)
 
 
 

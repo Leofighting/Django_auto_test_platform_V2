@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "apps.product",
     "bootstrap4",
     "apps.bug",
+    "apps.set",
 ]
 
 MIDDLEWARE = [

@@ -42,81 +42,83 @@
 </nav>
 
 <div class="main">
-<!-- 搜索栏-->
-<div class="page-header">
-    <form class="navbar-form" method="get" action="/apisearch/">
-        {% csrf_token %}
-        <input type="search" name="apitestname" placeholder="名称" required>
-        <button type="submit">搜索</button>
-    </form>
-</div>
-
-<!-- 增加 api 流程测试用例-->
-<div class="add">
-    <select name="Apitest" id="id_Apitest">
-        <option value="" selected>----api 流程测试用例----</option>
-    </select>
-    <a class="related-widget-wrapper-link change-related" id="change_id_Apitest"
-       data-hreftemplate="/admin/apitest/apitest/__fk__/change/?_to_field=id&amp;_popup=1" title="更改选中的测试用例">
-        <img src="/static/admin/img/icon-changelink.svg" alt="修改"/>
-    </a>
-    <a class="related-widget-wrapper-link add-related" id="add_id_Apitest"
-       href="/admin/api_test/apitest/add/?_to_field=id&amp;_popup=1" title="增加另一个测试用例">
-        <img src="/static/admin/img/icon-addlink.svg" alt="增加"/>增加
-    </a>
-</div>
-
-<!-- 流程接口列表-->
-<div class="row">
-    <div class="col-md-12">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>业务接口流程名称</th>
-                <th>执行人</th>
-                <th>结果</th>
-                <th>接口列表</th>
-                <th>查看</th>
-                <th>编辑</th>
-                <th>删除</th>
-
-            </tr>
-            </thead>
-            <tbody>
-            {% for apitest in api_tests %}
-                <tr>
-                    <td>{{ apitest.id }}</td>
-                    <td>{{ apitest.api_test_name }}</td>
-                    <td>{{ apitest.api_tester }}</td>
-                    <td>
-                        {% if apitest.api_test_result == 1 %}
-                            <a style='color:green'>{{ apitest.api_test_result }}</a>
-                        {% else %}
-                            <a style='color:red'>{{ apitest.api_test_result }}</a>
-                        {% endif %}
-                    </td>
-                    <td>{{ apitest.ApiStep.api_step }}</td>
-                    <td>
-                        <a href="{% url "api_step_manage" %}?api_test.id={{ apitest.id }} "><img
-                                src="/static/admin/img/icon-yes.svg"/></a>
-                    </td>
-                    <td><a style='color:lightblue' class="related-widget-wrapper-link add-related" id="add_id_Apitest"
-                           href="/admin/api_test/apitest/{{ apitest.id }}/change/?_to_field=id&_popup=1">
-                        <img src="/static/admin/img/icon-changelink.svg"/></a>
-                    </td>
-                    <td><a style='color:lightblue' class="related-widget-wrapper-link add-related" id="add_id_Apitest"
-                           href="/admin/api_test/apitest/{{ apitest.id }}/delete/?_to_field=id&_popup=1"><img
-                            src="/static/admin/img/icon-deletelink.svg"/></a>
-                    </td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+    <!-- 搜索栏-->
+    <div class="page-header">
+        <form class="navbar-form" method="get" action="/apisearch/">
+            {% csrf_token %}
+            <input type="search" name="apitestname" placeholder="名称" required>
+            <button type="submit">搜索</button>
+        </form>
     </div>
-</div>
-<!-- 翻页-->
-<span style="position:absolute; right:100px; bottom:30px;">
+
+    <!-- 增加 api 流程测试用例-->
+    <div class="add">
+        <select name="Apitest" id="id_Apitest">
+            <option value="" selected>----api 流程测试用例----</option>
+        </select>
+        <a class="related-widget-wrapper-link change-related" id="change_id_Apitest"
+           data-hreftemplate="/admin/apitest/apitest/__fk__/change/?_to_field=id&amp;_popup=1" title="更改选中的测试用例">
+            <img src="/static/admin/img/icon-changelink.svg" alt="修改"/>
+        </a>
+        <a class="related-widget-wrapper-link add-related" id="add_id_Apitest"
+           href="/admin/api_test/apitest/add/?_to_field=id&amp;_popup=1" title="增加另一个测试用例">
+            <img src="/static/admin/img/icon-addlink.svg" alt="增加"/>增加
+        </a>
+    </div>
+
+    <!-- 流程接口列表-->
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>业务接口流程名称</th>
+                    <th>执行人</th>
+                    <th>结果</th>
+                    <th>接口列表</th>
+                    <th>查看</th>
+                    <th>编辑</th>
+                    <th>删除</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for apitest in api_tests %}
+                    <tr>
+                        <td>{{ apitest.id }}</td>
+                        <td>{{ apitest.api_test_name }}</td>
+                        <td>{{ apitest.api_tester }}</td>
+                        <td>
+                            {% if apitest.api_test_result == 1 %}
+                                <a style='color:green'>{{ apitest.api_test_result }}</a>
+                            {% else %}
+                                <a style='color:red'>{{ apitest.api_test_result }}</a>
+                            {% endif %}
+                        </td>
+                        <td>{{ apitest.ApiStep.api_step }}</td>
+                        <td>
+                            <a href="{% url "api_step_manage" %}?api_test.id={{ apitest.id }} "><img
+                                    src="/static/admin/img/icon-yes.svg"/></a>
+                        </td>
+                        <td><a style='color:lightblue' class="related-widget-wrapper-link add-related"
+                               id="add_id_Apitest"
+                               href="/admin/api_test/apitest/{{ apitest.id }}/change/?_to_field=id&_popup=1">
+                            <img src="/static/admin/img/icon-changelink.svg"/></a>
+                        </td>
+                        <td><a style='color:lightblue' class="related-widget-wrapper-link add-related"
+                               id="add_id_Apitest"
+                               href="/admin/api_test/apitest/{{ apitest.id }}/delete/?_to_field=id&_popup=1"><img
+                                src="/static/admin/img/icon-deletelink.svg"/></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- 翻页-->
+    <span style="position:absolute; right:100px; bottom:30px;">
 <div style="position:absolute; right:100px; width:100px; ">
 <tr><th>总数</th><td>{{ api_test_counts }}</td></tr> {# 前端读取定义的变量#}
 </div>

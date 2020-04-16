@@ -39,79 +39,79 @@
 </nav>
 
 <div class="main">
-<!-- 搜索栏-->
-<div class="page-header" >
-    <form class="navbar-form" method="get" action="/apissearch/">
-        {% csrf_token %}
-        <input type="search" name="apiname" placeholder="名称" required>
-        <button type="submit">搜索</button>
-    </form>
-</div>
-
-<!-- 增加 api 单一接口测试用例-->
-<div class="add" >
-    <select name="Apis" id="id_Apis">
-        <option value="" selected>----api 单一接口测试用例----</option>
-    </select>
-    <a class="related-widget-wrapper-link change-related" id="change_id_Apis"
-       data-href�template="/admin/apitest/apis/__fk__/change/?_to_field=id&amp;_popup=1" title="更改选中的测试用例">
-        <img src="/static/admin/img/icon-changelink.svg" alt="修改"/>
-    </a>
-    <a class="related-widget-wrapper-link add-related" id="add_id_Apis"
-       href="/admin/apitest/apis/add/?_to_field=id&amp;_popup=1" title="增加另一个测试用例">
-        <img src="/static/admin/img/icon-addlink.svg" alt="增加"/>增加
-    </a>
-</div>
-<!--单一接口测试用例-->
-<div class="row" >
-    <div class="col-md-11">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>产品</th>
-                <th>单一接口测试用例名称</th>
-                <th>URL 地址</th>
-                <th>参数值</th>
-                <th>方法</th>
-                <th>预期结果</th>
-                <th>测试结果</th>
-                <th>时间</th>
-                <th>编辑</th>
-                <th>删除</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for apis in apiss %}
-                <tr>
-                    <td>{{ apis.id }}</td>
-                    <td>{{ apis.product.product_name }}</td>
-                    <td>{{ apis.api_name }}</td>
-                    <td>{{ apis.api_url }}</td>
-                    <td>{{ apis.api_param_value }}</td>
-                    <td>{{ apis.api_method }}</td>
-                    <td>{{ apis.api_result }}</td>
-                    <td>{% if apis.apistatus == 1 %}
-                        <a style='color:green'>{{ apis.apistatus }}</a>
-                    {% else %}
-                        <a style='color:red'>{{ apis.apistatus }}</a>
-                    {% endif %}
-                    </td>
-                    <td>{{ apis.create_time }}</td>
-                    <td><a style='color:lightblue' class="related-widget-wrapper-link add-related" id="add_id_Apis"
-                           href="/admin/api_test/apis/{{ apis.id }}/change/?_to_field=id&_popup=1"><img
-                            src="/static/admin/img/icon-changelink.svg"/></a></td>
-                    <td><a style='color:lightblue' class="related-widget-wrapper-link add-related" id="add_id_Apis"
-                           href="/admin/api_test/apis/{{ apis.id }}/delete/?_to_field=id&_popup=1"><img
-                            src="/static/admin/img/icon-deletelink.svg"/></a></td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+    <!-- 搜索栏-->
+    <div class="page-header">
+        <form class="navbar-form" method="get" action="/apissearch/">
+            {% csrf_token %}
+            <input type="search" name="apiname" placeholder="名称" required>
+            <button type="submit">搜索</button>
+        </form>
     </div>
-</div>
-<!-- 翻页功能-->
-<span style="position:absolute; right:100px; bottom:30px;"> {# 把翻页功能固定显示在右下角#}
+
+    <!-- 增加 api 单一接口测试用例-->
+    <div class="add">
+        <select name="Apis" id="id_Apis">
+            <option value="" selected>----api 单一接口测试用例----</option>
+        </select>
+        <a class="related-widget-wrapper-link change-related" id="change_id_Apis"
+           data-href�template="/admin/apitest/apis/__fk__/change/?_to_field=id&amp;_popup=1" title="更改选中的测试用例">
+            <img src="/static/admin/img/icon-changelink.svg" alt="修改"/>
+        </a>
+        <a class="related-widget-wrapper-link add-related" id="add_id_Apis"
+           href="/admin/apitest/apis/add/?_to_field=id&amp;_popup=1" title="增加另一个测试用例">
+            <img src="/static/admin/img/icon-addlink.svg" alt="增加"/>增加
+        </a>
+    </div>
+    <!--单一接口测试用例-->
+    <div class="row">
+        <div class="col-md-11">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>产品</th>
+                    <th>单一接口测试用例名称</th>
+                    <th>URL 地址</th>
+                    <th>参数值</th>
+                    <th>方法</th>
+                    <th>预期结果</th>
+                    <th>测试结果</th>
+                    <th>时间</th>
+                    <th>编辑</th>
+                    <th>删除</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for apis in apiss %}
+                    <tr>
+                        <td>{{ apis.id }}</td>
+                        <td>{{ apis.product.product_name }}</td>
+                        <td>{{ apis.api_name }}</td>
+                        <td>{{ apis.api_url }}</td>
+                        <td>{{ apis.api_param_value }}</td>
+                        <td>{{ apis.api_method }}</td>
+                        <td>{{ apis.api_result }}</td>
+                        <td>{% if apis.apistatus == 1 %}
+                            <a style='color:green'>{{ apis.apistatus }}</a>
+                        {% else %}
+                            <a style='color:red'>{{ apis.apistatus }}</a>
+                        {% endif %}
+                        </td>
+                        <td>{{ apis.create_time }}</td>
+                        <td><a style='color:lightblue' class="related-widget-wrapper-link add-related" id="add_id_Apis"
+                               href="/admin/api_test/apis/{{ apis.id }}/change/?_to_field=id&_popup=1"><img
+                                src="/static/admin/img/icon-changelink.svg"/></a></td>
+                        <td><a style='color:lightblue' class="related-widget-wrapper-link add-related" id="add_id_Apis"
+                               href="/admin/api_test/apis/{{ apis.id }}/delete/?_to_field=id&_popup=1"><img
+                                src="/static/admin/img/icon-deletelink.svg"/></a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- 翻页功能-->
+    <span style="position:absolute; right:100px; bottom:30px;"> {# 把翻页功能固定显示在右下角#}
 <div style="position:absolute; right:100px; width:100px; ">
 <tr><th>总数</th><td>{{ apis_counts }}</td></tr> {# 前端读取定义的变量#}
 </div>

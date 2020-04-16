@@ -45,64 +45,65 @@
 </nav>
 
 <div class="main">
-<!-- 流程接口测试步骤-->
-<div class="row" style="padding-top: 70px;">
-    <div class="col-md-11">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>接口名称</th>
-                <th>接口名称</th>
-                <th>参数值</th>
-                <th>方法</th>
-                <th>预期结果</th>
-                <th>测试结果</th>
-                <th>时间</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for apistep in api_steps %}
+    <!-- 流程接口测试步骤-->
+    <div class="row" style="padding-top: 70px;">
+        <div class="col-md-11">
+            <table class="table table-striped">
+                <thead>
                 <tr>
-                    {% if apistep.api_test.id == api_test.id %}
-                        <td>{{ apistep.id }}</td>
-                        <td>{{ apistep.api_name }}</td>
-                        <td>{{ apistep.api_url }}</td>
-                        <td>{{ apistep.api_param_value }}</td>
-                        <td>{{ apistep.api_method }}</td>
-                        <td>{{ apistep.api_result }}</td>
-                        <td>
-                            {% if apistep.api_status == 1 %}
-                                <a style='color:green'>{{ apistep.api_status }}</a>
-                            {% else %}
-                                <a style='color:red'>{{ apistep.api_status }}</a>
-                            {% endif %}
-                        </td>
-                        <td>{{ apistep.create_time }}</td>
-                    {% endif %}
+                    <th>ID</th>
+                    <th>接口名称</th>
+                    <th>接口名称</th>
+                    <th>参数值</th>
+                    <th>方法</th>
+                    <th>预期结果</th>
+                    <th>测试结果</th>
+                    <th>时间</th>
                 </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                {% for apistep in api_steps %}
+                    <tr>
+                        {% if apistep.api_test.id == api_test.id %}
+                            <td>{{ apistep.id }}</td>
+                            <td>{{ apistep.api_name }}</td>
+                            <td>{{ apistep.api_url }}</td>
+                            <td>{{ apistep.api_param_value }}</td>
+                            <td>{{ apistep.api_method }}</td>
+                            <td>{{ apistep.api_result }}</td>
+                            <td>
+                                {% if apistep.api_status == 1 %}
+                                    <a style='color:green'>{{ apistep.api_status }}</a>
+                                {% else %}
+                                    <a style='color:red'>{{ apistep.api_status }}</a>
+                                {% endif %}
+                            </td>
+                            <td>{{ apistep.create_time }}</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
 
-<!-- 返回、编辑功能-->
-<div class="back_edit">
-<td>
-<a style='color:lightblue'  href="{% url 'api_test_manage' %}" >
-<img src="/static/admin/img/icon-yes.svg" alt="返回"/>返回
-</a>
-</td>
+    <!-- 返回、编辑功能-->
+    <div class="back_edit">
+        <td>
+            <a style='color:lightblue' href="{% url 'api_test_manage' %}">
+                <img src="/static/admin/img/icon-yes.svg" alt="返回"/>返回
+            </a>
+        </td>
 
-<td>
-<a style='color:lightblue' class="related-widget-wrapper-link add-related" id="add_id_Apitest" href="/admin/api_test/apitest/{{ api_test.id  }}/change/?_to_field=id&_popup=1">
-<img src="/static/admin/img/icon-changelink.svg"/>编辑</a>
-</td>
-</div>
+        <td>
+            <a style='color:lightblue' class="related-widget-wrapper-link add-related" id="add_id_Apitest"
+               href="/admin/api_test/apitest/{{ api_test.id }}/change/?_to_field=id&_popup=1">
+                <img src="/static/admin/img/icon-changelink.svg"/>编辑</a>
+        </td>
+    </div>
 
-<!-- 翻页功能-->
-<span style="position:absolute; right:100px; bottom:30px;"> {# 把翻页功能固定显示在右下角#}
+    <!-- 翻页功能-->
+    <span style="position:absolute; right:100px; bottom:30px;"> {# 把翻页功能固定显示在右下角#}
 <div class="container">
  <ul class="pagination" id="pager">
  {# 上一页链接开始#}
