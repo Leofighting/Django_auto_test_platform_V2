@@ -22,7 +22,9 @@
 >
 > ![image-20200416102634118](E:\测试\auto_test\static\git_images\04.png)
 
-
+> - Bug 管理
+>
+> ![image-20200416110612892](E:\测试\auto_test\static\git_images\05.png)
 
 
 

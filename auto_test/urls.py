@@ -27,4 +27,6 @@ urlpatterns = [
     path("product/", include("apps.product.urls")),
     # api 流程接口管理
     path("api_test/", include("apps.api_test.urls")),
+    # bug 管理
+    path("bug/", include("apps.bug.urls")),
 ]
