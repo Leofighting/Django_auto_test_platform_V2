@@ -4,7 +4,7 @@
 
 #### 整体开发架构
 
-> ![](E:\测试\automatic_test_platform\static\git_images\01.PNG)
+> ![](E:\测试\auto_test\static\git_images\01.png)
 
 
 
@@ -12,11 +12,15 @@
 
 > - 产品管理
 >
-> ![image-20200415114421801](E:\测试\automatic_test_platform\static\git_images\02.png)
+> ![](E:\测试\auto_test\static\git_images\02.png)
 
+> - 流程场景接口
+>
+> ![image-20200416092651822](E:\测试\auto_test\static\git_images\03.png)
 
-
-
+> - 单一场景接口
+>
+> ![image-20200416102634118](E:\测试\auto_test\static\git_images\04.png)
 
 
 

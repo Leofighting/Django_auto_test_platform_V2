@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'auto_test.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # 选择数据库类型
-        'NAME': "auto_test",  # 数据库名称
-        "HOST": "127.0.0.1",  # IP地址
+        'NAME': "auto_test01",  # 数据库名称
+        "HOST": "localhost",  # IP地址
         "PORT": "3306",  # 端口号
         "USER": "root",  # 数据库用户
-        "PASSWORD": "123qwe"  # 数据库密码
+        "PASSWORD": "123456"  # 数据库密码
     }
 }
 

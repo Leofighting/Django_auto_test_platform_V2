@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86f90a3e-c5b0-4cef-aced-978bb9135b36" name="Default Changelist" comment="" />
+    <list default="true" id="86f90a3e-c5b0-4cef-aced-978bb9135b36" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api_test/migrations/0002_apis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api_test/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api_test/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api_test/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api_test/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api_test/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api_test/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api_test/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api_test/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/product/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/product/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/product/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/product/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto_test/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_test/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto_test/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_test/urls.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,7 +30,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1aZ3kFPEtxLpQkNTnnWxCA5rzbo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -25,18 +44,19 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/apps/product/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/apps/api_test/templates" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\测试\auto_test\apps" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\测试\auto_test\apps\product\templates" />
       <recent name="E:\测试\auto_test\apps\api_test\templates" />
+      <recent name="E:\测试\auto_test\apps\product\templates" />
       <recent name="E:\测试\auto_test\api_test\templates" />
       <recent name="E:\测试\auto_test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\测试\auto_test\apps" />
     </key>
   </component>
   <component name="RunManager">
@@ -76,6 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1586929429653</updated>
       <workItem from="1586929431377" duration="4388000" />
+      <workItem from="1586997392018" duration="6469000" />
     </task>
     <servers />
   </component>
@@ -83,25 +104,25 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="790" y="159" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586929498721">
+    <state x="790" y="159" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587001578543">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="790" y="159" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586929498721" />
-    <state width="1139" height="281" key="GridCell.Tab.0.bottom" timestamp="1586934013733">
+    <state x="790" y="159" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587001578543" />
+    <state width="1877" height="259" key="GridCell.Tab.0.bottom" timestamp="1587004143120">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1139" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586934013733" />
-    <state width="1139" height="281" key="GridCell.Tab.0.center" timestamp="1586934013732">
+    <state width="1877" height="259" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587004143120" />
+    <state width="1877" height="259" key="GridCell.Tab.0.center" timestamp="1587004143120">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1139" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586934013732" />
-    <state width="1139" height="281" key="GridCell.Tab.0.left" timestamp="1586934013731">
+    <state width="1877" height="259" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587004143120" />
+    <state width="1877" height="259" key="GridCell.Tab.0.left" timestamp="1587004143120">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1139" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586934013731" />
-    <state width="1139" height="281" key="GridCell.Tab.0.right" timestamp="1586934013732">
+    <state width="1877" height="259" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587004143120" />
+    <state width="1877" height="259" key="GridCell.Tab.0.right" timestamp="1587004143120">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1139" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586934013732" />
+    <state width="1877" height="259" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587004143120" />
   </component>
 </project>

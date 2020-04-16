@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 __author__ = "leo"
 
-from django.urls import path, include
+from django.urls import path
 
 from apps.product import views
 

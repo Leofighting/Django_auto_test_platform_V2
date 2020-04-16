@@ -25,4 +25,6 @@ urlpatterns = [
     path('home/', views.home, name="home"),
     # 产品管理
     path("product/", include("apps.product.urls")),
+    # api 流程接口管理
+    path("api_test/", include("apps.api_test.urls")),
 ]
