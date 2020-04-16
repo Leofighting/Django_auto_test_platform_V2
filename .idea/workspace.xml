@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86f90a3e-c5b0-4cef-aced-978bb9135b36" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/bug/migrations/0002_auto_20200416_1400.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/set/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/set/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/app_test/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api_test/templates/api_step_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api_test/templates/api_step_manage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api_test/templates/api_test_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api_test/templates/api_test_manage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api_test/templates/apis_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api_test/templates/apis_manage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/product/templates/product_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/product/templates/product_manage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app_test/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app_test/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app_test/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app_test/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app_test/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app_test/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app_test/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app_test/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app_test/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app_test/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/product/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/product/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auto_test/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_test/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auto_test/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_test/urls.py" afterDir="false" />
     </list>
@@ -47,16 +45,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/apps/set/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/apps/app_test/templates" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\测试\auto_test\apps\app_test\templates" />
       <recent name="E:\测试\auto_test\apps\set\templates" />
       <recent name="E:\测试\auto_test\apps\bug\templates" />
       <recent name="E:\测试\auto_test\apps\api_test\templates" />
       <recent name="E:\测试\auto_test\apps\product\templates" />
-      <recent name="E:\测试\auto_test\api_test\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\测试\auto_test\apps" />
@@ -99,7 +97,7 @@
       <option name="presentableId" value="Default" />
       <updated>1586929429653</updated>
       <workItem from="1586929431377" duration="4388000" />
-      <workItem from="1586997392018" duration="14610000" />
+      <workItem from="1586997392018" duration="17319000" />
     </task>
     <servers />
   </component>
@@ -111,21 +109,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="790" y="159" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587001578543" />
-    <state width="1139" height="219" key="GridCell.Tab.0.bottom" timestamp="1587018173692">
+    <state width="1877" height="219" key="GridCell.Tab.0.bottom" timestamp="1587020800440">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1139" height="219" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587018173692" />
-    <state width="1139" height="219" key="GridCell.Tab.0.center" timestamp="1587018173692">
+    <state width="1877" height="219" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587020800440" />
+    <state width="1877" height="219" key="GridCell.Tab.0.center" timestamp="1587020800439">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1139" height="219" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587018173692" />
-    <state width="1139" height="219" key="GridCell.Tab.0.left" timestamp="1587018173692">
+    <state width="1877" height="219" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587020800439" />
+    <state width="1877" height="219" key="GridCell.Tab.0.left" timestamp="1587020800438">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1139" height="219" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587018173692" />
-    <state width="1139" height="219" key="GridCell.Tab.0.right" timestamp="1587018173692">
+    <state width="1877" height="219" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587020800438" />
+    <state width="1877" height="219" key="GridCell.Tab.0.right" timestamp="1587020800440">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1139" height="219" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587018173692" />
+    <state width="1877" height="219" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587020800440" />
   </component>
 </project>

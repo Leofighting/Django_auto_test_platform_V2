@@ -1,6 +1,7 @@
 from django.contrib import admin
 
 from apps.api_test.models import Apis
+from apps.app_test.models import AppCase
 from apps.product.models import Product
 
 
@@ -12,10 +13,16 @@ class ApisAdmin(admin.TabularInline):
     extra = 1
 
 
+class AppCaseAdmin(admin.TabularInline):
+    list_display = ["app_case_name", "app_test_result", "create_time", "product"]
+    model = AppCase
+    extra = 1
+
+
 class ProductAdmin(admin.ModelAdmin):
     list_display = ["product_name", "product_desc", "product_owner", "create_time", "id"]
     # inlines = [ApisAdmin, AppCaseAdmin, WebCaseAdmin]
-    inlines = [ApisAdmin]
+    inlines = [ApisAdmin, AppCaseAdmin]
 
 
 admin.site.register(Product, ProductAdmin)
