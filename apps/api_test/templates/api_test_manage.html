@@ -96,10 +96,9 @@
                                 <a style='color:red'>{{ apitest.api_test_result }}</a>
                             {% endif %}
                         </td>
-                        <td>{{ apitest.ApiStep.api_step }}</td>
+                        <td>{{ apitest.api_step.api_step }}</td>
                         <td>
-                            <a href="{% url "api_step_manage" %}?api_test.id={{ apitest.id }} "><img
-                                    src="/static/admin/img/icon-yes.svg"/></a>
+                            <a href="{% url "api_step_manage" %}?api_test.id={{ apitest.id }} "><img src="/static/admin/img/icon-yes.svg"/></a>
                         </td>
                         <td><a style='color:lightblue' class="related-widget-wrapper-link add-related"
                                id="add_id_Apitest"

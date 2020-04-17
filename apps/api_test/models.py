@@ -25,7 +25,7 @@ class ApiStep(models.Model):
     """测试步骤"""
     REQUEST_METHOD = (("get", "get"), ("post", "post"), ("put", "put"), ("delete", "delete"), ("patch", "patch"))
 
-    api_test = models.ForeignKey("ApiTest", on_delete=models.CASCADE)
+    api_test = models.ForeignKey("ApiTest", on_delete=models.CASCADE, related_name="api_step")
     api_step = models.CharField("测试步骤", max_length=100, null=True)
     api_name = models.CharField("接口名称", max_length=100)
     api_url = models.CharField("url地址", max_length=200)
@@ -34,6 +34,9 @@ class ApiStep(models.Model):
     api_result = models.CharField("预期结果", max_length=200)
     api_status = models.BooleanField("是否通过")
     create_time = models.DateTimeField("创建时间", auto_now=True)
+
+    class Meta:
+        ordering = ["id"]
 
     def __str__(self):
         return self.api_name

@@ -75,7 +75,7 @@
                 <tbody>
                 {% for appcasestep in app_case_steps %}
                     <tr>
-                        {% if appcasestep.app_case.id == appcase.id %}
+                        {% if appcasestep.app_case.id == app_case.id %}
                             <td>{{ appcasestep.app_case.product.product_name }}</td>
                             <td>case{{ appcasestep.app_case.id }}:{{ appcasestep.app_case.app_case_name }}</td>
                             <td>{{ appcasestep.app_test_step }}:{{ appcasestep.app_test_obj_name }}</td>
@@ -108,7 +108,7 @@
         </td>
         <td>
             <a style='color:lightblue' class="related-widget-wrapper-link add-related" id="add_id_Appcase"
-               href="/admin/app_test/appcase/{{ appcase.id }}/change/?_to_field=id&_popup=1">
+               href="/admin/app_test/appcase/{{ app_case.id }}/change/?_to_field=id&_popup=1">
                 <img src="/static/admin/img/icon-changelink.svg"/>编辑</a>
         </td>
     </div>

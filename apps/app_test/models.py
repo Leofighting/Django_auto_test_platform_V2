@@ -30,5 +30,8 @@ class AppCaseStep(models.Model):
     app_test_result = models.BooleanField("测试结果")
     create_time = models.DateTimeField("创建时间", auto_now=True)
 
+    class Meta:
+        ordering = ["id"]
+
     def __str__(self):
         return self.app_test_step
