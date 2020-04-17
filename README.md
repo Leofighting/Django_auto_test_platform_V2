@@ -30,9 +30,13 @@
 >
 > ![image-20200416140405000](E:\测试\auto_test\static\git_images\06.png)
 
+> - `App` 测试用例管理
+>
+> ![image-20200417102135189](E:\测试\auto_test\static\git_images\07.png)
 
-
-
+> - Web 测试用例管理
+>
+> ![image-20200417102220192](E:\测试\auto_test\static\git_images\08.png)
 
 
 

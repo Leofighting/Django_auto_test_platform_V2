@@ -3,10 +3,10 @@
     {% load bootstrap4 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
-    <title>自动化测试平台</title>
+    <title>产品自动化测试平台</title>
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"/>
     <link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"/>
     <script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
     <script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
     <script type="text/javascript" src="/static/admin/js/core.js"></script>
@@ -23,6 +23,7 @@
     } </style>
 </head>
 <body role="document">
+
 <!-- 导航栏-->
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
     <div class="container">
@@ -34,9 +35,7 @@
         &nbsp;&nbsp;&nbsp;&nbsp;
         <li class="active"><a style='color:white' href="/webcase_manage/">web用例</a></li>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <ul class="nav justify-content-center">
         </ul>
-
         <ul class="nav justify-content-end" style="position:absolute; right:10px; bottom:0px; ">
             <li class="nav-link"><a style='color:white' href="#">{{ user }}</a></li>
             <li class="nav-link"><a style='color:white' href="/logout/">退出</a></li>
@@ -45,40 +44,39 @@
 </nav>
 
 <div class="main">
-    <!-- 流程接口测试步骤-->
+    <!-- 用例步骤列表-->
     <div class="row">
-        <div class="col-md-11">
+        <div class="col-md-12">
             <table class="table table-striped">
-                <thead>
+                <thead class="head">
                 <tr>
-                    <th>ID</th>
-                    <th>接口名称</th>
-                    <th>接口名称</th>
-                    <th>参数值</th>
-                    <th>方法</th>
-                    <th>预期结果</th>
+                    <th>所属产品</th>
+                    <th>所属用例</th>
+                    <th>步骤</th>
+                    <th>定位方式</th>
+                    <th>控件元素</th>
+                    <th>操作方法</th>
+                    <th>测试数据</th>
+                    <th>验证数据</th>
                     <th>测试结果</th>
                     <th>时间</th>
                 </tr>
                 </thead>
                 <tbody>
-                {% for apistep in api_steps %}
+                {% for webcasestep in web_case_steps %}
                     <tr>
-                        {% if apistep.api_test.id == api_test.id %}
-                            <td>{{ apistep.id }}</td>
-                            <td>{{ apistep.api_name }}</td>
-                            <td>{{ apistep.api_url }}</td>
-                            <td>{{ apistep.api_param_value }}</td>
-                            <td>{{ apistep.api_method }}</td>
-                            <td>{{ apistep.api_result }}</td>
-                            <td>
-                                {% if apistep.api_status == 1 %}
-                                    <a style='color:green'>{{ apistep.api_status }}</a>
-                                {% else %}
-                                    <a style='color:red'>{{ apistep.api_status }}</a>
-                                {% endif %}
-                            </td>
-                            <td>{{ apistep.create_time }}</td>
+                        {% if webcasestep.web_case.id == web_case.id %}
+
+                            <td>{{ webcasestep.web_case.product.product_name }}</td>
+                            <td>case{{ webcasestep.web_case.id }}:{{ webcasestep.web_case.web_case_name }}</td>
+                            <td>{{ webcasestep.web_test_step }}:{{ webcasestep.web_test_obj_name }}</td>
+                            <td>{{ webcasestep.web_find_method }}</td>
+                            <td>{{ webcasestep.web_element }}</td>
+                            <td>{{ webcasestep.web_opt_method }}</td>
+                            <td>{{ webcasestep.web_test_data }}</td>
+                            <td>{{ webcasestep.web_assert_data }}</td>
+                            <td>{{ webcasestep.web_test_result }}</td>
+                            <td>{{ webcasestep.create_time }}</td>
                         {% endif %}
                     </tr>
                 {% endfor %}
@@ -90,46 +88,45 @@
     <!-- 返回、编辑功能-->
     <div class="back_edit">
         <td>
-            <a style='color:lightblue' href="{% url 'api_test_manage' %}">
+            <a style='color:lightblue' href="{% url 'web_case_manage' %}">
                 <img src="/static/admin/img/icon-yes.svg" alt="返回"/>返回
             </a>
         </td>
-
         <td>
-            <a style='color:lightblue' class="related-widget-wrapper-link add-related" id="add_id_Apitest"
-               href="/admin/api_test/apitest/{{ api_test.id }}/change/?_to_field=id&_popup=1">
+            <a style='color:lightblue' class="related-widget-wrapper-link add-related" id="add_id_Webtest"
+               href="/admin/web_test/webcase/{{ web_case.id }}/change/?_to_field=id&_popup=1">
                 <img src="/static/admin/img/icon-changelink.svg"/>编辑</a>
         </td>
     </div>
 
-    <!-- 翻页功能-->
+    <!-- web 翻页功能-->
     <span style="position:absolute; right:100px; bottom:30px;"> {# 把翻页功能固定显示在右下角#}
 <div class="container">
  <ul class="pagination" id="pager">
  {# 上一页链接开始#}
-     {% if api_steps.has_previous %}
+     {% if webcasesteps.has_previous %}
          {# 如果有上一页则正常显示上一页的链接#}
-         <li class="previous"><a href="/api_step_manage/?page={{ api_steps.previous_page_number }}">上
-一页</a></li> {# 上一页标签 #}
+         <li class="previous"><a
+                 href="/webcasestep_manage/?page={{ webcasesteps.previous_page_number }}">上一页</a></li> {# 上一页标签 #}
      {% else %}
-         <li class="previous disabled"><a href="#">上一页</a></li> {# 如果当前不存在上一页则上一页的链接不可单击#}
+         <li class="previous disabled"><a href="#">上一页</a></li> {# 如果当前不存在上一页，则上一页的链接不可单击#}
      {% endif %}
      {# 上一页链接开始#}
 
-     {% for num in api_steps.paginator.page_range %}
+     {% for num in webcasesteps.paginator.page_range %}
 
          {% if num == current_page %}
-             <li class="item active"><a href="/api_step_manage/?page={{ num }}">{{ num }}</a></li>
-             {#显示当前页数链接#}
+             <li class="item active"><a
+                     href="/webcasestep_manage/?page={{ num }}">{{ num }}</a></li> {#显示当前页数链接#}
          {% else %}
-             <li class="item"><a href="/api_step_manage/?page={{ num }}">{{ num }}</a></li>
+             <li class="item"><a href="/webcasestep_manage/?page={{ num }}">{{ num }}</a></li>
          {% endif %}
      {% endfor %}
 
      {# 下一页链接开始#}
-     {% if api_steps.has_next %} {# 如果有下一页，则正常显示下一页的链接#}
-         <li class="next"><a href="/api_step_manage/?page={{ api_steps.next_page_number }}">下一页
-</a></li>
+     {% if webcasesteps.has_next %} {# 如果有下一页，则正常显示下一页链接#}
+         <li class="next"><a href="/webcasestep_manage/?page={{ webcasesteps.next_page_number }}">下
+一页</a></li>
      {% else %}
          <li class="next disabled"><a href="#">下一页</a></li>
      {% endif %}

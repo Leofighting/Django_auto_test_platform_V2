@@ -33,4 +33,6 @@ urlpatterns = [
     path("set/", include("apps.set.urls")),
     # App 测试管理
     path("app_test/", include("apps.app_test.urls")),
+    # web 测试管理
+    path("web_test/", include("apps.web_test.urls")),
 ]
