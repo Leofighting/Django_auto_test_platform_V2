@@ -47,3 +47,14 @@ def web_case_step_manage(request):
         "web_case_steps": web_case_step_list,
         "web_case": web_case
     })
+
+
+@login_required
+def web_search(request):
+    username = request.session.get("user", "")
+    search_web_case_name = request.GET.get("web_case_name", "")
+    web_case_list = WebCase.objects.filter(web_case_name__icontains=search_web_case_name)
+    return render(request, "web_case_manage.html", {
+        "user": username,
+        "web_cases": web_case_list
+    })

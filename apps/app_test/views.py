@@ -51,3 +51,14 @@ def app_case_step_manage(request):
         "app_case_steps": app_case_step_list,
         "app_case": app_case
     })
+
+
+@login_required
+def app_search(request):
+    username = request.session.get("user", "")
+    search_app_case_name = request.GET.get("app_case_name", "")
+    app_case_list = AppCase.objects.filter(app_case_name__icontains=search_app_case_name)
+    return render(request, "app_case_manage.html", {
+        "user": username,
+        "app_cases": app_case_list
+    })

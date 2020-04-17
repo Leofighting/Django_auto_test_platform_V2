@@ -1,99 +1,73 @@
-<html lang="zh-CN">
-<head>
-    {% load bootstrap4 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-    <title>产品自动化测试平台</title>
-    <link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"/>
-    <script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
-    <script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
-    <script type="text/javascript" src="/static/admin/js/core.js"></script>
-    <script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
-    <script type="text/javascript" src="/static/admin/js/actions.js"></script>
-    <script type="text/javascript" src="/static/admin/js/urlify.js"></script>
-    <script type="text/javascript" src="/static/admin/js/prepopulate.js"></script>
-    <script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximumscale=1.0">
-    <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css"/>
-    <meta name="robots" content="NONE,NOARCHIVE"/>
-</head>
-<body role="document">
+{% extends "base.html" %}
 
-<!-- 导航栏-->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">&nbsp;</a>
-        <ul class="nav justify-content-center">
-        </ul>
-        <ul class="nav justify-content-end">
-            <li class="nav-link"><a style='color:white' href="#">{{ user }}</a></li>
-            <li class="nav-link"><a style='color:white' href="{% url 'logout' %}">退出</a></li>
-        </ul>
-    </div>
-</nav>
+{% block title %}
+    设置管理
+{% endblock %}
 
-<!-- 搜索栏-->
-<div class="main">
-    <div class="page-header">
-        <form class="navbar-form" method="get" action="/setsearch/">
-            {% csrf_token %}
-            <input type="search" name="setname" placeholder="名称" required>
-            <button type="submit">搜索</button>
-        </form>
-    </div>
-
-    <!-- 增加系统设置-->
-    <div class="add">
-        <select name="Set" id="id_Set">
-            <option value="" selected>----设置名称----</option>
-        </select>
-        <a class="related-widget-wrapper-link change-related" id="change_id_Set"
-           data-href-template="/admin/set/set/__fk__/change/?_to_field=id&amp;_popup=1" title="更改选中的系统设置">
-            <img src="/static/admin/img/icon-changelink.svg" alt="修改"/>
-        </a>
-        <a class="related-widget-wrapper-link add-related" id="add_id_Set"
-           href="/admin/set/set/add/?_to_field=id&amp;_popup=1" title="增加另一个系统设置">
-            <img src="/static/admin/img/icon-addlink.svg" alt="增加"/>增加
-        </a>
-    </div>
-
-    <!--设置列表-->
-    <div class="row">
-        <div class="col-md-11">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>设置名称</th>
-                    <th>设置的值</th>
-                    <th>编辑</th>
-                    <th>删除</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for set in sets %}
-                    <tr>
-                        <td>{{ set.id }}</td>
-                        <td>{{ set.set_name }}</td>
-                        <td>{{ set.set_value }}</td>
-                        <td><a style='color:lightblue' class="related-widget-wrapper-link add-related" id="add_id_Set"
-                               href="/admin/set/set/{{ set.id }}/change/?_to_field=id&_popup=1"><img
-                                src="/static/admin/img/icon-changelink.svg"/></a>
-                        </td>
-                        <td><a style='color:lightblue' class="related-widget-wrapper-link add-related" id="add_id_Set"
-                               href="/admin/set/set/{{ set.id }}/delete/?_to_field=id&_popup=1"><img
-                                src="/static/admin/img/icon-deletelink.svg"/></a>
-                        </td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+{% block main %}
+    <div class="main">
+        <!-- 搜索栏-->
+        <div class="page-header">
+            <form class="navbar-form" method="get" action="{% url 'set_search' %}">
+                {% csrf_token %}
+                <input type="search" name="set_name" placeholder="名称" required>
+                <button type="submit">搜索</button>
+            </form>
         </div>
-    </div>
 
-<!--统计和翻页功能-->
-<span style="position:absolute; right:100px; bottom:30px;"> {# 把翻页功能固定显示在右下角#}
+        <!-- 增加系统设置-->
+        <div class="add">
+            <select name="Set" id="id_Set">
+                <option value="" selected>----设置名称----</option>
+            </select>
+            <a class="related-widget-wrapper-link change-related" id="change_id_Set"
+               data-href-template="/admin/set/set/__fk__/change/?_to_field=id&amp;_popup=1" title="更改选中的系统设置">
+                <img src="/static/admin/img/icon-changelink.svg" alt="修改"/>
+            </a>
+            <a class="related-widget-wrapper-link add-related" id="add_id_Set"
+               href="/admin/set/set/add/?_to_field=id&amp;_popup=1" title="增加另一个系统设置">
+                <img src="/static/admin/img/icon-addlink.svg" alt="增加"/>增加
+            </a>
+        </div>
+
+        <!--设置列表-->
+        <div class="row">
+            <div class="col-md-11">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>设置名称</th>
+                        <th>设置的值</th>
+                        <th>编辑</th>
+                        <th>删除</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for set in sets %}
+                        <tr>
+                            <td>{{ set.id }}</td>
+                            <td>{{ set.set_name }}</td>
+                            <td>{{ set.set_value }}</td>
+                            <td><a style='color:lightblue' class="related-widget-wrapper-link add-related"
+                                   id="add_id_Set"
+                                   href="/admin/set/set/{{ set.id }}/change/?_to_field=id&_popup=1"><img
+                                    src="/static/admin/img/icon-changelink.svg"/></a>
+                            </td>
+                            <td><a style='color:lightblue' class="related-widget-wrapper-link add-related"
+                                   id="add_id_Set"
+                                   href="/admin/set/set/{{ set.id }}/delete/?_to_field=id&_popup=1"><img
+                                    src="/static/admin/img/icon-deletelink.svg"/></a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!--统计和翻页功能-->
+        <span style="position:absolute; right:100px; bottom:30px;"> {# 把翻页功能固定显示在右下角#}
 <div class="container">
  <ul class="pagination" id="pager">
  {# 上一页链接开始#}
@@ -123,6 +97,5 @@
  </ul>
 </div>
 </span>
-</div>
-</body>
-</html>
+    </div>
+{% endblock %}

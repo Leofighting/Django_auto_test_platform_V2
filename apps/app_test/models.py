@@ -12,6 +12,7 @@ class AppCase(models.Model):
     class Meta:
         verbose_name = "app 测试用例"
         verbose_name_plural = verbose_name
+        ordering = ["id"]
 
     def __str__(self):
         return self.app_case_name

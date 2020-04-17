@@ -1,52 +1,15 @@
-<html lang="zh-CN">
-<head>
-    {% load bootstrap4 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-    <title>自动化测试平台</title>
+{% extends 'base.html' %}
 
-    <link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"/>
-    <script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
-    <script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
-    <script type="text/javascript" src="/static/admin/js/core.js"></script>
-    <script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
-    <script type="text/javascript" src="/static/admin/js/actions.js"></script>
-    <script type="text/javascript" src="/static/admin/js/urlify.js"></script>
-    <script type="text/javascript" src="/static/admin/js/prepopulate.js"></script>
-    <script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximumscale=1.0">
-    <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css"/>
-    <meta name="robots" content="NONE,NOARCHIVE"/>
-</head>
-<body role="document">
-<!-- 导航栏-->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-    <div class="container">
-        <li class="active"><a style='color:white' href="/apis_manage/">单一接口</a></li>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <li><a style='color:white' href="/api_test_manage/">流程接口</a></li>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <li class="active"><a style='color:white' href="/appcase_manage/">app用例</a></li>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <li class="active"><a style='color:white' href="/webcase_manage/">web用例</a></li>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <ul class="nav justify-content-center">
-
-        </ul>
-        <ul class="nav justify-content-end" style="position:absolute; right:10px; bottom:0px; ">
-            <li class="nav-link"><a style='color:white' href="#">{{ user }}</a></li>
-            <li class="nav-link"><a style='color:white' href="/logout/">退出</a></li>
-        </ul>
-    </div>
-</nav>
-
+{% block title %}
+API 接口测试
+{% endblock %}
+{% block main %}
 <div class="main">
     <!-- 搜索栏-->
     <div class="page-header">
-        <form class="navbar-form" method="get" action="/apisearch/">
+        <form class="navbar-form" method="get" action="{% url 'api_search' %}">
             {% csrf_token %}
-            <input type="search" name="apitestname" placeholder="名称" required>
+            <input type="search" name="api_test_name" placeholder="名称" required>
             <button type="submit">搜索</button>
         </form>
     </div>
@@ -154,5 +117,4 @@
 </div>
 </span>
 </div>
-</body>
-</html>
+{% endblock %}

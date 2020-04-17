@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render
 
@@ -26,4 +27,20 @@ def product_manage(request):
         "user": username,
         "products": product_list,
         "product_counts": product_count
+    })
+
+
+@login_required
+def product_search(request):
+    """
+    产品搜索
+    :param request:
+    :return: 按产品名搜索， 输出符合搜索条件的产品管理页面
+    """
+    username = request.session.get("user", "")
+    search_product_name = request.GET.get("product_name", "")
+    product_list = Product.objects.filter(product_name__icontains=search_product_name)
+    return render(request, "product_manage.html", {
+        "user": username,
+        "products": product_list
     })

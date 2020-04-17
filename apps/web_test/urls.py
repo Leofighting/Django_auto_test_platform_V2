@@ -8,4 +8,5 @@ from apps.web_test import views
 urlpatterns = [
     path("manage/", views.web_case_manage, name="web_case_manage"),
     path("step/", views.web_case_step_manage, name="web_case_step_manage"),
+    path("web_search/", views.web_search, name="web_search"),
 ]

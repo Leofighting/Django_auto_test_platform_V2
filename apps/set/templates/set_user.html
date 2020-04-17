@@ -38,7 +38,7 @@
 <div class="main">
     <!-- 搜索栏-->
     <div class="page-header">
-        <form class="navbar-form" method="get" action="/usersearch/">
+        <form class="navbar-form" method="get" action="{% url 'user_search' %}">
             {% csrf_token %}
             <input type="search" name="username" placeholder="名称" required>
 

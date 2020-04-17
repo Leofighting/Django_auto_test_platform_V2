@@ -1,3 +1,4 @@
+import pymysql
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
@@ -112,6 +113,57 @@ def apis_manage(request):
         apis_list = paginator.page(paginator.num_pages)
     return render(request, "apis_manage.html", {
         "user": username,
-        "apiss": apis_list,
+        "apis_list": apis_list,
         "apis_counts": apis_count
+    })
+
+
+@login_required
+def test_report(request):
+    username = request.session.get("user", "")
+    apis_list = Apis.objects.all()
+    apis_count = Apis.objects.all().count()
+    db = pymysql.connect(user="root", db="auto_test01", passwd="123456", host="127.0.0.1")
+    cursor = db.cursor()
+    sql1 = "select count(id) from api_test_apis where api_test_apis.api_status=1"
+    aa = cursor.execute(sql1)
+    apis_pass_count = [row[0] for row in cursor.fetchmany(aa)][0]
+
+    sql2 = "select count(id) from api_test_apis where api_test_apis.api_status=0"
+    bb = cursor.execute(sql2)
+    apis_fail_count = [row[0] for row in cursor.fetchmany(bb)][0]
+    db.close()
+    return render(request, "report.html", {
+        "user": username,
+        "apis_list": apis_list,
+        "apis_counts": apis_count,
+        "apis_pass_counts": apis_pass_count,
+        "apis_fail_counts": apis_fail_count
+    })
+
+
+def left(request):
+    """左侧边栏"""
+    return render(request, "left.html")
+
+
+@login_required
+def api_search(request):
+    username = request.session.get("user", "")
+    search_api_test_name = request.GET.get("api_test_name", "")
+    api_test_list = ApiTest.objects.filter(api_test_name__icontains=search_api_test_name)
+    return render(request, "api_test_manage.html", {
+        "user": username,
+        "api_tests": api_test_list
+    })
+
+
+@login_required
+def apis_search(request):
+    username = request.session.get("user", "")
+    search_api_name = request.GET.get("api_name", "")
+    apis_list = Apis.objects.filter(api_name__icontains=search_api_name)
+    return render(request, "apis_manage.html", {
+        "user": username,
+        "apis_list": apis_list
     })

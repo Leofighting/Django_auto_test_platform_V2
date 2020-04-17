@@ -57,6 +57,7 @@ class Apis(models.Model):
     class Meta:
         verbose_name = "单一场景接口"
         verbose_name_plural = verbose_name
+        ordering = ["id"]
 
     def __str__(self):
         return self.api_name

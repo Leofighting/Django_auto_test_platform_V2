@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render
@@ -29,6 +30,28 @@ def set_user(request):
     user_list = User.objects.all()
     username = request.session.get("user", "")
 
+    return render(request, "set_user.html", {
+        "user": username,
+        "users": user_list
+    })
+
+
+@login_required
+def set_search(request):
+    username = request.session.get("user", "")
+    search_set_name = request.GET.get("set_name", "")
+    set_list = Set.objects.filter(set_name__icontains=search_set_name)
+    return render(request, "set_manage.html", {
+        "user": username,
+        "sets": set_list
+    })
+
+
+@login_required
+def user_search(request):
+    username = request.session.get("user", "")
+    search_username = request.GET.get("username", "")
+    user_list = User.objects.filter(username__icontains=search_username)
     return render(request, "set_user.html", {
         "user": username,
         "users": user_list

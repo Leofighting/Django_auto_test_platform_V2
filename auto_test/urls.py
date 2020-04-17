@@ -23,6 +23,8 @@ urlpatterns = [
     path('login/', views.login, name="login"),
     path('logout/', views.logout, name="logout"),
     path('home/', views.home, name="home"),
+    path('left/', views.left, name="left"),
+    path('test_report/', views.test_report, name="test_report"),
     # 产品管理
     path("product/", include("apps.product.urls")),
     # api 流程接口管理

@@ -1,118 +1,89 @@
-<html lang="zh-CN">
-<head>
-    {% load bootstrap4 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-    <title>产品自动化测试平台</title>
-    <link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"/>
+{% extends 'base.html' %}
 
-    <script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
-    <script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
-    <script type="text/javascript" src="/static/admin/js/core.js"></script>
-    <script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
-    <script type="text/javascript" src="/static/admin/js/actions.js"></script>
-    <script type="text/javascript" src="/static/admin/js/urlify.js"></script>
-    <script type="text/javascript" src="/static/admin/js/prepopulate.js"></script>
-    <script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximumscale=1.0">
-    <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css"/>
-    <meta name="robots" content="NONE,NOARCHIVE"/>
-</head>
-<body role="document">
+{% block title %}
+    bug 管理
+{% endblock %}
 
-<!-- 导航栏-->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">&nbsp;</a>
-        <ul class="nav justify-content-center">
-        </ul>
-        <ul class="nav justify-content-end">
-            <li class="nav-link"><a style='color:white' href="#">{{ user }}</a></li>
-            <li class="nav-link"><a style='color:white' href="{% url 'logout' %}">退出</a></li>
-        </ul>
-    </div>
-</nav>
+{% block main %}
+    <div class="main">
+        <!-- 搜索栏-->
+        <div class="page-header">
+            <form class="navbar-form" method="get" action="{% url 'bug_search' %}">
+                {% csrf_token %}
+                <input type="search" name="bug_name" placeholder="名称" required>
+                <button type="submit">搜索</button>
+            </form>
+        </div>
 
-<div class="main">
-<!-- 搜索栏-->
-<div class="page-header">
-    <form class="navbar-form" method="get" action="/bugsearch/">
-        {% csrf_token %}
-        <input type="search" name="bugname" placeholder="名称" required>
-        <button type="submit">搜索</button>
-    </form>
-</div>
+        <!-- 增加 bug-->
+        <div class="add">
+            <select name="Bug" id="id_Bug">
+                <option value="" selected>----bug 名称----</option>
+            </select>
+            <a class="related-widget-wrapper-link change-related" id="change_id_Set"
+               data-hreftemplate="/admin/bug/bug/__fk__/change/?_to_field=id&amp;_popup=1" title="更改选中的 bug">
+                <img src="/static/admin/img/icon-changelink.svg" alt="修改"/>
+            </a>
+            <a class="related-widget-wrapper-link add-related" id="add_id_Set"
+               href="/admin/bug/bug/add/?_to_field=id&amp;_popup=1" title="增加另一个系统设置">
+                <img src="/static/admin/img/icon-addlink.svg" alt="增加"/>增加
+            </a>
+            </form>
+        </div>
 
-<!-- 增加 bug-->
-<div class="add">
-    <select name="Bug" id="id_Bug">
-        <option value="" selected>----bug 名称----</option>
-    </select>
-    <a class="related-widget-wrapper-link change-related" id="change_id_Set"
-       data-hreftemplate="/admin/bug/bug/__fk__/change/?_to_field=id&amp;_popup=1" title="更改选中的 bug">
-        <img src="/static/admin/img/icon-changelink.svg" alt="修改"/>
-    </a>
-    <a class="related-widget-wrapper-link add-related" id="add_id_Set"
-       href="/admin/bug/bug/add/?_to_field=id&amp;_popup=1" title="增加另一个系统设置">
-        <img src="/static/admin/img/icon-addlink.svg" alt="增加"/>增加
-    </a>
-    </form>
-</div>
-
-<!--bug 列表-->
-<div class="row">
-    <div class="col-md-100">
-        <table class="table table-striped" style="table-layout: fixed;">
-            <style>
-                td {
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
-            </style>
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>产品</th>
-                <th>bug 名称</th>
-                <th>bug 详情</th>
-                <th>解决状态</th>
-                <th>严重程度</th>
-                <th>创建人</th>
-                <th>分配给</th>
-                <th>创建时间</th>
-                <th>编辑</th>
-                <th>删除</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for bug in bugs %}
-                <tr>
-                <td>{{ bug.id }}</td>
-                <td>{{ bug.product.product_name }}</td>
-                <td>{{ bug.bug_name }}</td>
-                <td title="{{ bug.bug_detail }}">{{ bug.bug_detail }}</td>
-                <td>{{ bug.bug_status }}</td>
-                <td>{{ bug.bug_level }}</td>
-                <td>{{ bug.bug_creat }}</td>
-                <td>{{ bug.bug_assign }}</td>
-                <td>{{ bug.created_time }}</td>
-                <td><a style='color:lightblue' class="related-widget-wrapper-link add-related" id="add_id_Bug"
-                       href="/admin/bug/bug/{{ bug.id }}/change/?_to_field=id&_popup=1"><img
-                        src="/static/admin/img/icon-changelink.svg"/></a>
-                </td>
-                <td><a style='color:lightblue' class="related-widget-wrapper-link add-related" id="add_id_Bug"
-                       href="/admin/bug/bug/{{ bug.id }}/delete/?_to_field=id&_popup=1"><img
-                        src="/static/admin/img/icon-deletelink.svg"/></a>
-                </td>
-            {% endfor %}
-            </tbody>
-        </table>
-    </div>
-</div>
-<!--统计和翻页功能-->
-<span style="position:absolute; right:100px; bottom:30px;"> {# 把翻页功能固定显示在右下角#}
+        <!--bug 列表-->
+        <div class="row">
+            <div class="col-md-100">
+                <table class="table table-striped" style="table-layout: fixed;">
+                    <style>
+                        td {
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                    </style>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>产品</th>
+                        <th>bug 名称</th>
+                        <th>bug 详情</th>
+                        <th>解决状态</th>
+                        <th>严重程度</th>
+                        <th>创建人</th>
+                        <th>分配给</th>
+                        <th>创建时间</th>
+                        <th>编辑</th>
+                        <th>删除</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for bug in bugs %}
+                        <tr>
+                        <td>{{ bug.id }}</td>
+                        <td>{{ bug.product.product_name }}</td>
+                        <td>{{ bug.bug_name }}</td>
+                        <td title="{{ bug.bug_detail }}">{{ bug.bug_detail }}</td>
+                        <td>{{ bug.bug_status }}</td>
+                        <td>{{ bug.bug_level }}</td>
+                        <td>{{ bug.bug_creat }}</td>
+                        <td>{{ bug.bug_assign }}</td>
+                        <td>{{ bug.create_time }}</td>
+                        <td><a style='color:lightblue' class="related-widget-wrapper-link add-related" id="add_id_Bug"
+                               href="/admin/bug/bug/{{ bug.id }}/change/?_to_field=id&_popup=1"><img
+                                src="/static/admin/img/icon-changelink.svg"/></a>
+                        </td>
+                        <td><a style='color:lightblue' class="related-widget-wrapper-link add-related" id="add_id_Bug"
+                               href="/admin/bug/bug/{{ bug.id }}/delete/?_to_field=id&_popup=1"><img
+                                src="/static/admin/img/icon-deletelink.svg"/></a>
+                        </td>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--统计和翻页功能-->
+        <span style="position:absolute; right:100px; bottom:30px;"> {# 把翻页功能固定显示在右下角#}
 <div style="position:absolute; right:100px; width:100px; ">
 <tr><th>总数</th><td>{{ bug_counts }}</td></tr> {# 前端读取定义的变量#}
 </div>
@@ -145,6 +116,5 @@
  </ul>
 </div>
 </span>
-</div>
-</body>
-</html>
+    </div>
+{% endblock %}

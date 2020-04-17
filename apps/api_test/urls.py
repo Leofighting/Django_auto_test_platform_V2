@@ -9,4 +9,6 @@ urlpatterns = [
     path("test_manage/", views.api_test_manage, name="api_test_manage"),
     path("step_manage/", views.api_step_manage, name="api_step_manage"),
     path("apis_manage/", views.apis_manage, name="apis_manage"),
+    path("apis_search/", views.apis_search, name="apis_search"),
+    path("api_search/", views.api_search, name="api_search"),
 ]
