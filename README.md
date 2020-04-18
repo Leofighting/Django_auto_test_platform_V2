@@ -38,7 +38,9 @@
 >
 > ![image-20200417102220192](E:\测试\auto_test\static\git_images\08.png)
 
-
+> - 搜索功能实现
+>
+> ![image-20200418090637139](E:\测试\auto_test\static\git_images\09.png)
 
 
 

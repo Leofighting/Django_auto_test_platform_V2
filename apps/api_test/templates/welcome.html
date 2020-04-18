@@ -18,7 +18,7 @@
         </ul>
         <ul class="nav justify-content-end">
             <li class="nav-link"><a style='color:white' href="#">{{ user }}</a></li>
-            <li class="nav-link"><a style='color:white' href="/logout/">退出</a></li>
+            <li class="nav-link"><a style='color:white' href="{% url 'logout' %}">退出</a></li>
         </ul>
     </div>
 </nav>
@@ -32,7 +32,7 @@
 <div class="row" style="padding-top: 23px;">
     <div class="container">
         <tr>
-            <td><a href="../test_report" target="mainFrame">单击进入测试报告</a></td>
+            <td><a href="{% url 'test_report' %}" target="mainFrame">单击进入测试报告</a></td>
         </tr>
     </div>
 </div>

@@ -19,6 +19,7 @@ from django.urls import path, include
 from apps.api_test import views
 
 urlpatterns = [
+    path("", views.login),
     path('admin/', admin.site.urls),
     path('login/', views.login, name="login"),
     path('logout/', views.logout, name="logout"),
