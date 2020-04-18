@@ -24,6 +24,7 @@ urlpatterns = [
     path('login/', views.login, name="login"),
     path('logout/', views.logout, name="logout"),
     path('home/', views.home, name="home"),
+    path('welcome/', views.welcome, name="welcome"),
     path('left/', views.left, name="left"),
     path('test_report/', views.test_report, name="test_report"),
     # 产品管理

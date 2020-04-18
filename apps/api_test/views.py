@@ -167,3 +167,7 @@ def apis_search(request):
         "user": username,
         "apis_list": apis_list
     })
+
+
+def welcome(request):
+    return render(request, "welcome.html")

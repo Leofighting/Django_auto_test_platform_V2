@@ -3,19 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="86f90a3e-c5b0-4cef-aced-978bb9135b36" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api_test/templates/api_step_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api_test/templates/api_step_manage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api_test/templates/api_test_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api_test/templates/api_test_manage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api_test/templates/apis_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api_test/templates/apis_manage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api_test/templates/left.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api_test/templates/left.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api_test/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api_test/templates/welcome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app_test/templates/app_case_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app_test/templates/app_case_manage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app_test/templates/app_case_step_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app_test/templates/app_case_step_manage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/bug/templates/bug_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/bug/templates/bug_manage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/product/templates/product_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/product/templates/product_manage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/set/templates/set_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/set/templates/set_manage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web_test/templates/web_case_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web_test/templates/web_case_manage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web_test/templates/web_case_step_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web_test/templates/web_case_step_manage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api_test/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api_test/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auto_test/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_test/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +94,7 @@
       <workItem from="1586929431377" duration="4388000" />
       <workItem from="1586997392018" duration="17319000" />
       <workItem from="1587081364608" duration="12251000" />
-      <workItem from="1587171688672" duration="2047000" />
+      <workItem from="1587171688672" duration="2940000" />
     </task>
     <servers />
   </component>
