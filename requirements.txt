@@ -12,7 +12,7 @@ click==7.1.1
 colorama==0.4.3
 ConfigArgParse==1.2.1
 configparser==5.0.0
-Django==2.0.13
+Django==2.2.10
 django-bootstrap4==1.1.1
 django-celery==3.3.1
 Flask==1.1.2
