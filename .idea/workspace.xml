@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="86f90a3e-c5b0-4cef-aced-978bb9135b36" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api_test/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api_test/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auto_test/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_test/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api_test/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api_test/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api_test/templates/left.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api_test/templates/left.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -40,7 +41,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/apps/api_test/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
@@ -94,7 +95,8 @@
       <workItem from="1586929431377" duration="4388000" />
       <workItem from="1586997392018" duration="17319000" />
       <workItem from="1587081364608" duration="12251000" />
-      <workItem from="1587171688672" duration="2940000" />
+      <workItem from="1587171688672" duration="3169000" />
+      <workItem from="1587256343431" duration="3074000" />
     </task>
     <servers />
   </component>
@@ -106,21 +108,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="790" y="159" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587001578543" />
-    <state width="1877" height="236" key="GridCell.Tab.0.bottom" timestamp="1587096756046">
+    <state x="1107" y="259" key="FileChooserDialogImpl" timestamp="1587256556145">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="236" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587096756046" />
-    <state width="1877" height="236" key="GridCell.Tab.0.center" timestamp="1587096756045">
+    <state x="1107" y="259" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587256556145" />
+    <state width="1139" height="236" key="GridCell.Tab.0.bottom" timestamp="1587257024281">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="236" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587096756045" />
-    <state width="1877" height="236" key="GridCell.Tab.0.left" timestamp="1587096756045">
+    <state width="1139" height="236" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587257024281" />
+    <state width="1139" height="236" key="GridCell.Tab.0.center" timestamp="1587257024281">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="236" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587096756045" />
-    <state width="1877" height="236" key="GridCell.Tab.0.right" timestamp="1587096756045">
+    <state width="1139" height="236" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587257024281" />
+    <state width="1139" height="236" key="GridCell.Tab.0.left" timestamp="1587257024281">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="236" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587096756045" />
+    <state width="1139" height="236" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587257024281" />
+    <state width="1139" height="236" key="GridCell.Tab.0.right" timestamp="1587257024281">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1139" height="236" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587257024281" />
   </component>
 </project>
