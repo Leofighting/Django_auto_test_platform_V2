@@ -123,26 +123,27 @@ def apis_manage(request):
 @login_required
 def test_report(request):
     """测试报告"""
-    username = request.session.get("user", "")
-    apis_list = Apis.objects.all()
-    apis_count = Apis.objects.all().count()
-    db = pymysql.connect(user="root", db="auto_test01", passwd="123456", host="127.0.0.1")
-    cursor = db.cursor()
-    sql1 = "select count(id) from api_test_apis where api_test_apis.api_status=1"
-    aa = cursor.execute(sql1)
-    apis_pass_count = [row[0] for row in cursor.fetchmany(aa)][0]
-
-    sql2 = "select count(id) from api_test_apis where api_test_apis.api_status=0"
-    bb = cursor.execute(sql2)
-    apis_fail_count = [row[0] for row in cursor.fetchmany(bb)][0]
-    db.close()
-    return render(request, "report.html", {
-        "user": username,
-        "apis_list": apis_list,
-        "apis_counts": apis_count,
-        "apis_pass_counts": apis_pass_count,
-        "apis_fail_counts": apis_fail_count
-    })
+    # username = request.session.get("user", "")
+    # apis_list = Apis.objects.all()
+    # apis_count = Apis.objects.all().count()
+    # db = pymysql.connect(user="root", db="auto_test01", passwd="123456", host="127.0.0.1")
+    # cursor = db.cursor()
+    # sql1 = "select count(id) from api_test_apis where api_test_apis.api_status=1"
+    # aa = cursor.execute(sql1)
+    # apis_pass_count = [row[0] for row in cursor.fetchmany(aa)][0]
+    #
+    # sql2 = "select count(id) from api_test_apis where api_test_apis.api_status=0"
+    # bb = cursor.execute(sql2)
+    # apis_fail_count = [row[0] for row in cursor.fetchmany(bb)][0]
+    # db.close()
+    # return render(request, "report.html", {
+    #     "user": username,
+    #     "apis_list": apis_list,
+    #     "apis_counts": apis_count,
+    #     "apis_pass_counts": apis_pass_count,
+    #     "apis_fail_counts": apis_fail_count
+    # })
+    return render(request, "report_example.html")
 
 
 def left(request):
