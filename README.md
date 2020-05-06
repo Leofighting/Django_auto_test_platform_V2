@@ -1,3 +1,7 @@
+#### [附图 Word 版本](https://shimo.im/docs/PD8qwKwVJk8TWDQg/ 《Django 自动化测试平台》，可复制链接后用石墨文档 App 打开)
+
+
+
 #### 平台介绍
 
 > 支持 `API、AppUI、WebUI` 等自动化测试，集成实现测试用例管理、产品管理、任务计划、测试报告、定时任务或持续集成等功能模块。使自动化测试的过程达到数据、脚本、任务分离易于维护和管理，成本更低、数据更直观、产出更快等目标。
@@ -13,7 +17,7 @@
 
 #### 整体开发架构
 
-> ![](E:\测试\auto_test\static\git_images\01.png)
+> ![image](https://github.com/Leofighting/Django_auto_test_platform_V2/blob/master/static/git_images/01.png)
 
 #### 启动配置
 
@@ -29,35 +33,35 @@
 
 > - 产品管理
 >
-> ![](E:\测试\auto_test\static\git_images\02.png)
+> ![image](https://github.com/Leofighting/Django_auto_test_platform_V2/blob/master/static/git_images/02.png)
 
 > - 流程场景接口
 >
-> ![image-20200416092651822](E:\测试\auto_test\static\git_images\03.png)
+> ![image](https://github.com/Leofighting/Django_auto_test_platform_V2/blob/master/static/git_images/03.png)
 
 > - 单一场景接口
 >
-> ![image-20200416102634118](E:\测试\auto_test\static\git_images\04.png)
+> ![image](https://github.com/Leofighting/Django_auto_test_platform_V2/blob/master/static/git_images/04.png)
 
 > - Bug 管理
 >
-> ![image-20200416110612892](E:\测试\auto_test\static\git_images\05.png)
+> ![image](https://github.com/Leofighting/Django_auto_test_platform_V2/blob/master/static/git_images/05.png)
 
 > - 系统设置
 >
-> ![image-20200416140405000](E:\测试\auto_test\static\git_images\06.png)
+> ![image](https://github.com/Leofighting/Django_auto_test_platform_V2/blob/master/static/git_images/06.png)
 
 > - `App` 测试用例管理
 >
-> ![image-20200417102135189](E:\测试\auto_test\static\git_images\07.png)
+> ![image](https://github.com/Leofighting/Django_auto_test_platform_V2/blob/master/static/git_images/07.png)
 
 > - Web 测试用例管理
 >
-> ![image-20200417102220192](E:\测试\auto_test\static\git_images\08.png)
+> ![image](https://github.com/Leofighting/Django_auto_test_platform_V2/blob/master/static/git_images/08.png)
 
 > - 搜索功能实现
 >
-> ![image-20200418090637139](E:\测试\auto_test\static\git_images\09.png)
+> ![image](https://github.com/Leofighting/Django_auto_test_platform_V2/blob/master/static/git_images/09.png)
 
 > - 性能测试
 >
@@ -94,7 +98,7 @@
 >
 >   - 输入虚拟并发用户数，每秒增加用户数，点击开始即可，结果如下图所示
 >
-> - ![image-20200419085545281](E:\测试\auto_test\static\git_images\10.png)
+> - ![image](https://github.com/Leofighting/Django_auto_test_platform_V2/blob/master/static/git_images/10.png)
 
 
 
