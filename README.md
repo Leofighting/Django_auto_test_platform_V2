@@ -1,6 +1,6 @@
 #### [附图 Word 版本](https://shimo.im/docs/PD8qwKwVJk8TWDQg/ 《Django 自动化测试平台》，可复制链接后用石墨文档 App 打开)
 
-
+#### [视频演示](https://www.bilibili.com/video/BV1354y1X7fD/)
 
 #### 平台介绍
 
