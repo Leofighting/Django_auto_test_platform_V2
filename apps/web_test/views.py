@@ -7,6 +7,7 @@ from apps.web_test.models import WebCase, WebCaseStep
 
 @login_required
 def web_case_manage(request):
+    """web 测试用例管理"""
     web_case_list = WebCase.objects.all()
     web_case_count = web_case_list.count()
     username = request.session.get("user", "")
@@ -29,6 +30,7 @@ def web_case_manage(request):
 
 @login_required
 def web_case_step_manage(request):
+    """web 测试用例步骤管理"""
     web_case_step_list = WebCaseStep.objects.all()
     username = request.session.get("user", "")
     web_case_id = request.GET.get("web_case.id", None)
@@ -51,6 +53,7 @@ def web_case_step_manage(request):
 
 @login_required
 def web_search(request):
+    """web测试搜索"""
     username = request.session.get("user", "")
     search_web_case_name = request.GET.get("web_case_name", "")
     web_case_list = WebCase.objects.filter(web_case_name__icontains=search_web_case_name)

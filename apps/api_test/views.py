@@ -77,6 +77,7 @@ def api_test_manage(request):
 
 @login_required
 def api_step_manage(request):
+    """接口步骤管理"""
     username = request.session.get("user", "")
     api_step_list = ApiStep.objects.all()
     api_test_id = request.GET.get("api_test.id", None)
@@ -99,6 +100,7 @@ def api_step_manage(request):
 
 @login_required
 def apis_manage(request):
+    """单一接口测试管理"""
     username = request.session.get("user", "")
     apis_list = Apis.objects.all()
     apis_count = apis_list.count()
@@ -120,6 +122,7 @@ def apis_manage(request):
 
 @login_required
 def test_report(request):
+    """测试报告"""
     username = request.session.get("user", "")
     apis_list = Apis.objects.all()
     apis_count = Apis.objects.all().count()
@@ -149,6 +152,7 @@ def left(request):
 
 @login_required
 def api_search(request):
+    """接口测试搜索"""
     username = request.session.get("user", "")
     search_api_test_name = request.GET.get("api_test_name", "")
     api_test_list = ApiTest.objects.filter(api_test_name__icontains=search_api_test_name)
@@ -160,6 +164,7 @@ def api_search(request):
 
 @login_required
 def apis_search(request):
+    """单一接口测试搜索"""
     username = request.session.get("user", "")
     search_api_name = request.GET.get("api_name", "")
     apis_list = Apis.objects.filter(api_name__icontains=search_api_name)
@@ -170,4 +175,5 @@ def apis_search(request):
 
 
 def welcome(request):
+    """欢迎导语页面"""
     return render(request, "welcome.html")

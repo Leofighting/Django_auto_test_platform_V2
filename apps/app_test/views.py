@@ -33,6 +33,7 @@ def app_case_manage(request):
 
 @login_required
 def app_case_step_manage(request):
+    """APP 测试用例步骤管理"""
     username = request.session.get("user", "")
     app_case_step_list = AppCaseStep.objects.all()
     app_case_id = request.GET.get("app_case.id", None)
@@ -55,6 +56,7 @@ def app_case_step_manage(request):
 
 @login_required
 def app_search(request):
+    """app 测试搜索"""
     username = request.session.get("user", "")
     search_app_case_name = request.GET.get("app_case_name", "")
     app_case_list = AppCase.objects.filter(app_case_name__icontains=search_app_case_name)

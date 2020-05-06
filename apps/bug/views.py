@@ -32,6 +32,7 @@ def bug_manage(request):
 
 @login_required
 def bug_search(request):
+    """bug 搜索"""
     username = request.session.get("user", "")
     search_bug_name = request.GET.get("bug_name", "")
     bug_list = Bug.objects.filter(bug_name__icontains=search_bug_name)

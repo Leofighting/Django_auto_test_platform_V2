@@ -38,6 +38,7 @@ def set_user(request):
 
 @login_required
 def set_search(request):
+    """设置搜索"""
     username = request.session.get("user", "")
     search_set_name = request.GET.get("set_name", "")
     set_list = Set.objects.filter(set_name__icontains=search_set_name)
@@ -49,6 +50,7 @@ def set_search(request):
 
 @login_required
 def user_search(request):
+    """用户搜索"""
     username = request.session.get("user", "")
     search_username = request.GET.get("username", "")
     user_list = User.objects.filter(username__icontains=search_username)
