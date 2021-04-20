@@ -37,7 +37,7 @@ plaster==1.0
 plaster-pastedeploy==0.7
 pluggy==0.13.1
 psutil==5.7.0
-py==1.8.1
+py==1.10.0
 pycparser==2.20
 PyMySQL==0.9.3
 pyparsing==2.4.7
